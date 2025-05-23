@@ -6,7 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-common/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Twig\\Extra\\TwigExtraBundle\\' => array($vendorDir . '/twig/extra-bundle'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
@@ -85,6 +85,7 @@ return array(
     'Symfony\\Bridge\\Doctrine\\' => array($vendorDir . '/symfony/doctrine-bridge'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Link\\' => array($vendorDir . '/psr/link/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src', $vendorDir . '/psr/http-factory/src'),
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
@@ -93,6 +94,9 @@ return array(
     'PHPStan\\PhpDocParser\\' => array($vendorDir . '/phpstan/phpdoc-parser/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
+    'LibDNS\\' => array($vendorDir . '/daverandom/libdns/src'),
+    'League\\Uri\\' => array($vendorDir . '/league/uri-parser/src', $vendorDir . '/league/uri-interfaces', $vendorDir . '/league/uri'),
+    'Kelunik\\Certificate\\' => array($vendorDir . '/kelunik/certificate/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Doctrine\\SqlFormatter\\' => array($vendorDir . '/doctrine/sql-formatter/src'),
     'Doctrine\\Persistence\\' => array($vendorDir . '/doctrine/persistence/src/Persistence'),
@@ -112,4 +116,16 @@ return array(
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'App\\Tests\\' => array($baseDir . '/tests'),
     'App\\' => array($baseDir . '/src'),
+    'Amp\\WindowsRegistry\\' => array($vendorDir . '/amphp/windows-registry/lib'),
+    'Amp\\Sync\\' => array($vendorDir . '/amphp/sync/src'),
+    'Amp\\Socket\\' => array($vendorDir . '/amphp/socket/src'),
+    'Amp\\Serialization\\' => array($vendorDir . '/amphp/serialization/src'),
+    'Amp\\Process\\' => array($vendorDir . '/amphp/process/lib'),
+    'Amp\\Parser\\' => array($vendorDir . '/amphp/parser/src'),
+    'Amp\\Http\\Client\\' => array($vendorDir . '/amphp/http-client/src'),
+    'Amp\\Http\\' => array($vendorDir . '/amphp/hpack/src', $vendorDir . '/amphp/http/src'),
+    'Amp\\Dns\\' => array($vendorDir . '/amphp/dns/lib'),
+    'Amp\\Cache\\' => array($vendorDir . '/amphp/cache/lib'),
+    'Amp\\ByteStream\\' => array($vendorDir . '/amphp/byte-stream/lib'),
+    'Amp\\' => array($vendorDir . '/amphp/amp/lib'),
 );
