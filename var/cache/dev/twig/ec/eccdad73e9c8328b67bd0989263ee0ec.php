@@ -89,7 +89,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
-                <li><a href=\"#contact\" class=\"nav-link\">Contacts</a></li>
+                <li><a href=\"#contact\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+
             </ul>
 
             <ul class=\"header-social\">
@@ -115,7 +116,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     <div class=\"col-md-6\"></div>
                     <div class=\"col-md-6\">
                         <h1>Profane Tattoo</h1>
-                        <p>Le studio où vos envies sont encrées a jamais</p>
+                        <p>L’encre, c’est votre histoire. Le style, c’est sa signature.</p>
                         
                     </div>
                 </div>
@@ -144,8 +145,15 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     </div>
 
                     <div class=\"short-description\">
-                        <p>Je suis Aurélien Rouze, le propriétaire de Profane Tattoo.</p>
-                        <p>Je suis ici pour t'accompagner dans ton ou tes projets !</p>
+                        <p>
+                        Aurélien Rouze, tatoueur passionné et fondateur de Profane Tattoo, vous accueille dans son studio à Saint-Omer pour donner vie à vos idées.
+                        Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
+                        Que vous ayez une idée précise ou simplement une envie, il vous accompagne de la conception à la réalisation, avec écoute et expertise.
+                        </p>
+                        <p>
+                        Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
+                        Que vous ayez une idée précise ou simplement une envie, il vous accompagne de la conception à la réalisation, avec écoute et expertise.
+                        </p>
                         
                     </div>
                 </div>
@@ -226,186 +234,39 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
-    </section>
-    <!-- End Testimonials Section -->
+    <!-- Section Contact -->
+   <!-- Section Contact -->
+<!-- Section Contact -->
+<!-- Section Contact -->
+<footer id=\"contact\" style=\"padding: 50px 0; background-color: #111; color: white; margin: 0;\">
+  <h2 style=\"text-align: center;\">Prise de rendez-vous</h2>
+  <form action=\"traitement.php\" method=\"POST\" style=\"max-width: 600px; margin: auto; background-color: #222; padding: 30px; border-radius: 8px;\">
+    
+    <label for=\"nom\">Nom :</label><br>
+    <input type=\"text\" id=\"nom\" name=\"nom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <!-- Interview Section -->
+    <label for=\"prenom\">Prénom :</label><br>
+    <input type=\"text\" id=\"prenom\" name=\"prenom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
+
+    <label for=\"email\">Email :</label><br>
+    <input type=\"email\" id=\"email\" name=\"email\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
+
+    <label for=\"objet\">Objet :</label><br>
+    <input type=\"text\" id=\"objet\" name=\"objet\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
+
+    <label for=\"message\">Message :</label><br>
+    <textarea id=\"message\" name=\"message\" rows=\"6\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"></textarea><br><br>
+
+    <button type=\"submit\" style=\"background-color: #e63946; color: white; border: none; padding: 10px 20px; border-radius: 5px;\">Envoyer</button>
+  </form>
+</footer>
+
+
+
+
+    
+
    
-    <!-- End Interview Section -->
-
-   
-
-    <!-- Contact Us Section -->
-    <section id=\"contact\" class=\"contact-wrap\" style=\"background: #F9F9F9;\">
-        <div class=\"container\">
-
-            <!-- Sec Title -->
-            <div class=\"sec-title\">
-                <h1>Get in touch <br>with me:</h1>
-            </div>
-
-            <div class=\"row\">
-
-                <div class=\"col-md-3 contact-info\">
-                    <h4>LA office</h4>
-                    <p>In velit arcu posuere integer sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus</p>
-                    <ul class=\"contact-info-list\">
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:location\"></span>784 Norman, Los Angeles</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:phone\"></span>+49 93 30493943</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:mail3\"></span>contact@thevoidsir.com</a>
-                        </li>
-                    </ul>
-                    <a class=\"btn btn-blank\" href=\"#\" role=\"button\">Get location</a>
-                </div>
-
-                <div class=\"col-md-3 contact-info\">
-                    <h4>LA office</h4>
-                    <p>In velit arcu posuere integer sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus</p>
-                    <ul class=\"contact-info-list\">
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:location\"></span>1630 Elm Drive, New York City</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:phone\"></span>+49 93 30493943</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:mail3\"></span>contact@thevoidsir.com</a>
-                        </li>
-                    </ul>
-                    <a class=\"btn btn-blank\" href=\"#\" role=\"button\">Get location</a>
-                </div>
-
-                <div class=\"col-md-6\">                    
-                    <!-- Contact Form -->
-                    <div class=\"contact-form\">
-                        <form>
-                            <div class=\"form-group\">
-                                <input type=\"text\" name=\"username\" placeholder=\"Write your name here\" required=\"\">
-                            </div>
-
-                            <div class=\"form-group\">
-                                <input type=\"text\" name=\"email\" placeholder=\"Write your email address\" required=\"\">
-                            </div>
-
-                            <div class=\"form-group\">
-                                <textarea name=\"message\" placeholder=\"Write your messages here\"></textarea>
-                            </div>
-                            
-                            <a class=\"btn btn-black\" href=\"#\" role=\"button\">Send It</a>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- End Contact Us Section -->
-
-    <!--Main Footer-->
-    <footer class=\"main-footer\" style=\"background: #141414;\">
-
-        <!--Widgets Section-->
-        <div class=\"widgets-section container\">
-            <div class=\"row\">
-
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget about-widget\">
-                        <h4>About void tattoo</h4>
-                        <p>Sit amet, consectetur nun in velit arcu posuere integer. Adipiscing elit duis porttitor massa tellus</p>
-                        <ul class=\"contact-info-list\">
-                            <li>
-                                <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:location\"></span>1630 Elm Drive, New York City</a>
-                            </li>
-                            <li>
-                                <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:phone\"></span>+49 93 30493943</a>
-                            </li>
-                            <li>
-                                <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:mail3\"></span>contact@yourinfo.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget links-widget\">
-                        <h4>Useful links</h4>
-                        <div class=\"widget-content\">
-                            <ul class=\"list\">
-                                <li><a href=\"#\">About me</a></li>
-                                <li><a href=\"#\">My gallery</a></li>
-                                <li><a href=\"#\">My services </a></li>
-                                <li><a href=\"#\">Contact me</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget time-widget\">
-                        <h4>Working time</h4>
-                        <div class=\"widget-content\">
-                            <ul class=\"list\">
-                                <li><a href=\"#\">Mon - Tue / Appointment</a></li>
-                                <li><a href=\"#\">Wed - Fri / 10:00 - 9:00pm</a></li>
-                                <li><a href=\"#\">Sat / 10:00 - 6:00pm</a></li>
-                                <li><a href=\"#\">Sun / no work on this day</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget newsletter-widget\">
-                        <h4>Get newsletter</h4>
-                        <p>Elit duis porttitor massa tellus nun in velit arcu posuere integer.</p>
-                        <form>
-                            <div class=\"form-group\">
-                                <input type=\"text\" name=\"email\" placeholder=\"Your email address\" required=\"\">
-                                <a href=\"\"><span class=\"iconify\" data-icon=\"la:telegram-plane\"></span></a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-            </div>
-
-        </div>
-            
-        <!--Footer Bottom-->
-        <div class=\"footer-bottom\">
-            <div class=\"copyright container\">@ 2023 <a href=\"https://templatesjungle.com/\" target=\"_blank\">TemplatesJungle</a>. All rights reserved.</div>
-        </div>
-
-    </footer>
-    <!-- End Main Footer -->
-
-    <!-- Video Popup -->
-    <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
-        <div class=\"modal-dialog\" role=\"document\">
-
-            <div class=\"modal-content\">
-              
-                <div class=\"modal-body\">
-                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"><svg class=\"bi\" width=\"40\" height=\"40\"><use xlink:href=\"#close-sharp\"></use></svg></button>
-                    <div class=\"ratio ratio-16x9\">
-                      <iframe class=\"embed-responsive-item\" src=\"\" id=\"video\"  allowscriptaccess=\"always\" allow=\"autoplay\"></iframe>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
 <script src=\"js/jquery-1.11.0.min.js\"></script>
 <script src=\"https://code.iconify.design/1/1.0.6/iconify.min.js\"></script>
@@ -486,7 +347,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
-                <li><a href=\"#contact\" class=\"nav-link\">Contacts</a></li>
+                <li><a href=\"#contact\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+
             </ul>
 
             <ul class=\"header-social\">
@@ -512,7 +374,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     <div class=\"col-md-6\"></div>
                     <div class=\"col-md-6\">
                         <h1>Profane Tattoo</h1>
-                        <p>Le studio où vos envies sont encrées a jamais</p>
+                        <p>L’encre, c’est votre histoire. Le style, c’est sa signature.</p>
                         
                     </div>
                 </div>
@@ -541,8 +403,15 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     </div>
 
                     <div class=\"short-description\">
-                        <p>Je suis Aurélien Rouze, le propriétaire de Profane Tattoo.</p>
-                        <p>Je suis ici pour t'accompagner dans ton ou tes projets !</p>
+                        <p>
+                        Aurélien Rouze, tatoueur passionné et fondateur de Profane Tattoo, vous accueille dans son studio à Saint-Omer pour donner vie à vos idées.
+                        Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
+                        Que vous ayez une idée précise ou simplement une envie, il vous accompagne de la conception à la réalisation, avec écoute et expertise.
+                        </p>
+                        <p>
+                        Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
+                        Que vous ayez une idée précise ou simplement une envie, il vous accompagne de la conception à la réalisation, avec écoute et expertise.
+                        </p>
                         
                     </div>
                 </div>
@@ -623,186 +492,39 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
-    </section>
-    <!-- End Testimonials Section -->
+    <!-- Section Contact -->
+   <!-- Section Contact -->
+<!-- Section Contact -->
+<!-- Section Contact -->
+<footer id=\"contact\" style=\"padding: 50px 0; background-color: #111; color: white; margin: 0;\">
+  <h2 style=\"text-align: center;\">Prise de rendez-vous</h2>
+  <form action=\"traitement.php\" method=\"POST\" style=\"max-width: 600px; margin: auto; background-color: #222; padding: 30px; border-radius: 8px;\">
+    
+    <label for=\"nom\">Nom :</label><br>
+    <input type=\"text\" id=\"nom\" name=\"nom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <!-- Interview Section -->
+    <label for=\"prenom\">Prénom :</label><br>
+    <input type=\"text\" id=\"prenom\" name=\"prenom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
+
+    <label for=\"email\">Email :</label><br>
+    <input type=\"email\" id=\"email\" name=\"email\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
+
+    <label for=\"objet\">Objet :</label><br>
+    <input type=\"text\" id=\"objet\" name=\"objet\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
+
+    <label for=\"message\">Message :</label><br>
+    <textarea id=\"message\" name=\"message\" rows=\"6\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"></textarea><br><br>
+
+    <button type=\"submit\" style=\"background-color: #e63946; color: white; border: none; padding: 10px 20px; border-radius: 5px;\">Envoyer</button>
+  </form>
+</footer>
+
+
+
+
+    
+
    
-    <!-- End Interview Section -->
-
-   
-
-    <!-- Contact Us Section -->
-    <section id=\"contact\" class=\"contact-wrap\" style=\"background: #F9F9F9;\">
-        <div class=\"container\">
-
-            <!-- Sec Title -->
-            <div class=\"sec-title\">
-                <h1>Get in touch <br>with me:</h1>
-            </div>
-
-            <div class=\"row\">
-
-                <div class=\"col-md-3 contact-info\">
-                    <h4>LA office</h4>
-                    <p>In velit arcu posuere integer sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus</p>
-                    <ul class=\"contact-info-list\">
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:location\"></span>784 Norman, Los Angeles</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:phone\"></span>+49 93 30493943</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:mail3\"></span>contact@thevoidsir.com</a>
-                        </li>
-                    </ul>
-                    <a class=\"btn btn-blank\" href=\"#\" role=\"button\">Get location</a>
-                </div>
-
-                <div class=\"col-md-3 contact-info\">
-                    <h4>LA office</h4>
-                    <p>In velit arcu posuere integer sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus</p>
-                    <ul class=\"contact-info-list\">
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:location\"></span>1630 Elm Drive, New York City</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:phone\"></span>+49 93 30493943</a>
-                        </li>
-                        <li>
-                            <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:mail3\"></span>contact@thevoidsir.com</a>
-                        </li>
-                    </ul>
-                    <a class=\"btn btn-blank\" href=\"#\" role=\"button\">Get location</a>
-                </div>
-
-                <div class=\"col-md-6\">                    
-                    <!-- Contact Form -->
-                    <div class=\"contact-form\">
-                        <form>
-                            <div class=\"form-group\">
-                                <input type=\"text\" name=\"username\" placeholder=\"Write your name here\" required=\"\">
-                            </div>
-
-                            <div class=\"form-group\">
-                                <input type=\"text\" name=\"email\" placeholder=\"Write your email address\" required=\"\">
-                            </div>
-
-                            <div class=\"form-group\">
-                                <textarea name=\"message\" placeholder=\"Write your messages here\"></textarea>
-                            </div>
-                            
-                            <a class=\"btn btn-black\" href=\"#\" role=\"button\">Send It</a>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- End Contact Us Section -->
-
-    <!--Main Footer-->
-    <footer class=\"main-footer\" style=\"background: #141414;\">
-
-        <!--Widgets Section-->
-        <div class=\"widgets-section container\">
-            <div class=\"row\">
-
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget about-widget\">
-                        <h4>About void tattoo</h4>
-                        <p>Sit amet, consectetur nun in velit arcu posuere integer. Adipiscing elit duis porttitor massa tellus</p>
-                        <ul class=\"contact-info-list\">
-                            <li>
-                                <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:location\"></span>1630 Elm Drive, New York City</a>
-                            </li>
-                            <li>
-                                <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:phone\"></span>+49 93 30493943</a>
-                            </li>
-                            <li>
-                                <a href=\"#\"><span class=\"iconify\" data-icon=\"icomoon-free:mail3\"></span>contact@yourinfo.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget links-widget\">
-                        <h4>Useful links</h4>
-                        <div class=\"widget-content\">
-                            <ul class=\"list\">
-                                <li><a href=\"#\">About me</a></li>
-                                <li><a href=\"#\">My gallery</a></li>
-                                <li><a href=\"#\">My services </a></li>
-                                <li><a href=\"#\">Contact me</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget time-widget\">
-                        <h4>Working time</h4>
-                        <div class=\"widget-content\">
-                            <ul class=\"list\">
-                                <li><a href=\"#\">Mon - Tue / Appointment</a></li>
-                                <li><a href=\"#\">Wed - Fri / 10:00 - 9:00pm</a></li>
-                                <li><a href=\"#\">Sat / 10:00 - 6:00pm</a></li>
-                                <li><a href=\"#\">Sun / no work on this day</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Footer Column-->
-                <div class=\"footer-column col-lg-3 col-md-3 col-sm-12\">
-                    <div class=\"footer-widget newsletter-widget\">
-                        <h4>Get newsletter</h4>
-                        <p>Elit duis porttitor massa tellus nun in velit arcu posuere integer.</p>
-                        <form>
-                            <div class=\"form-group\">
-                                <input type=\"text\" name=\"email\" placeholder=\"Your email address\" required=\"\">
-                                <a href=\"\"><span class=\"iconify\" data-icon=\"la:telegram-plane\"></span></a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-            </div>
-
-        </div>
-            
-        <!--Footer Bottom-->
-        <div class=\"footer-bottom\">
-            <div class=\"copyright container\">@ 2023 <a href=\"https://templatesjungle.com/\" target=\"_blank\">TemplatesJungle</a>. All rights reserved.</div>
-        </div>
-
-    </footer>
-    <!-- End Main Footer -->
-
-    <!-- Video Popup -->
-    <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
-        <div class=\"modal-dialog\" role=\"document\">
-
-            <div class=\"modal-content\">
-              
-                <div class=\"modal-body\">
-                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"><svg class=\"bi\" width=\"40\" height=\"40\"><use xlink:href=\"#close-sharp\"></use></svg></button>
-                    <div class=\"ratio ratio-16x9\">
-                      <iframe class=\"embed-responsive-item\" src=\"\" id=\"video\"  allowscriptaccess=\"always\" allow=\"autoplay\"></iframe>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
 <script src=\"js/jquery-1.11.0.min.js\"></script>
 <script src=\"https://code.iconify.design/1/1.0.6/iconify.min.js\"></script>

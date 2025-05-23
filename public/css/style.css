@@ -20,10 +20,7 @@ html {
  * Remove the margin in all browsers.
  */
 
-body {
-  margin: 0;
-}
-
+ 
 /**
  * Render the `main` element consistently in IE.
  */
@@ -1714,4 +1711,10 @@ img{
   height: 100vh;
   display: flex;
   align-items: center;
+}
+
+
+body {
+  margin: 0;
+  background-color: #ffffff;
 }
