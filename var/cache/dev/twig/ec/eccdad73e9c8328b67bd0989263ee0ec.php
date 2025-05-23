@@ -89,7 +89,6 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
-                <li><a href=\"#interview\" class=\"nav-link\">Interview</a></li>
                 <li><a href=\"#contact\" class=\"nav-link\">Contacts</a></li>
             </ul>
 
@@ -116,8 +115,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     <div class=\"col-md-6\"></div>
                     <div class=\"col-md-6\">
                         <h1>Profane Tattoo</h1>
-                        <p>bienvenu dans mon shop la où tout se passe gnegnegne </p>
-                        <a class=\"btn btn-outline\" href=\"#\" role=\"button\">plus<span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a>
+                        <p>Le studio où vos envies sont encrées a jamais</p>
+                        
                     </div>
                 </div>
                 
@@ -141,13 +140,13 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <div class=\"col-md-6 about-me-content\">                
                     <!-- Sec Title -->
                     <div class=\"sec-title\">
-                        <h1>My <br>Story:</h1>
+                        <h1>Mon <br>histoire:</h1>
                     </div>
 
                     <div class=\"short-description\">
-                        <p>In velit arcu posuere integer. Dolor sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus hac vel ante sit sed scelerisque praesent duis volutpat laoreet.</p>
-                        <p>Nisl, sit molestie commodo congue. Etiam lectus risus in amet. Commodo molestie fames etiam aenean sed. Pellentesque et venenatis amet, tellus hac vel adipiscing sit. Placerat vitae nisl viverra faucibus tincidunt habitasse amet. Nunc, velit nunc, scelerisque imperdiet nunc.</p>
-                        <a class=\"btn btn-blank\" href=\"#\" role=\"button\">Know More<span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a>
+                        <p>Je suis Aurélien Rouze, le propriétaire de Profane Tattoo.</p>
+                        <p>Je suis ici pour t'accompagner dans ton ou tes projets !</p>
+                        
                     </div>
                 </div>
             </div>
@@ -194,9 +193,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
               </div>
             </div>
             <!-- Gallery -->
-            <div class=\"text-center\">                
-                <a class=\"btn btn-black\" href=\"#\" role=\"button\">View All<span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a>
-            </div>
+            
 
         </div>
 
@@ -211,7 +208,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"row\">
                 
                 <!-- GG maps -->
-                
+                <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.2115697116315!2d2.248731276437078!3d50.75311056552571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf9567fcd08c3%3A0x23280fb7b81d1112!2sProfane%20Tattoo!5e0!3m2!1sfr!2sfr!4v1747999844388!5m2!1sfr!2sfr\" width=\"800\" height=\"400\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>
 
             </div>
             
@@ -224,76 +221,16 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     <section class=\"testimonials-wrap\">
 
         <div class=\"container testimonial-slider swiper mySwiper\">
-
-            <div class=\"swiper-wrapper\">
-
-                <!-- Testimonial Layout -->
-                <div class=\"item-content swiper-slide\">
-                    <div class=\"quotation-img\">
-                        <img src=\"images/resource/quotation.png\" alt=\"quotation-icon\">
-                    </div>
-                    <p class=\"item-paragraph\">je suis comblée par l'élégance et la finesse du travail réalisé, chez Profane on a su comprendre ma personalité et guider mes choix pour que ce tatouage soit juste une partie de moi.
-                        Aurélien est un pro un vrai!! et il a réussi à me proposer une version finale de mon projet comme je l'imaginais.
-                        Tres à l'écoute et de très bon conseil. Bravo je recommande à 2000%</p>
-                    <div class=\"testimonial-author\">                        
-                        <div class=\"author-name\">Lydie Dolezsal<span>Cliente</span></div>
-                    </div>
-                </div>
-
-                <div class=\"item-content swiper-slide\">
-                    <div class=\"quotation-img\">
-                        <img src=\"images/resource/quotation.png\" alt=\"quotation-icon\">
-                    </div>
-                    <p class=\"item-paragraph\">Je me suis fait tatouée, chez profane tatoo, tatoueur au top!!!!  Je suis très fière de mes tatouages!! C'est un mec super qui connaît parfaitement son travail, on peut lui faire entièrement confiance, je vais d'ailleurs reprendre rendez-vous !!!</p>
-                    <div class=\"testimonial-author\">                        
-                        <div class=\"author-name\">Cathy Milo<span></span></div>
-                    </div>
-                </div>
-
-                <div class=\"item-content swiper-slide\">
-                    <div class=\"quotation-img\">
-                        <img src=\"images/resource/quotation.png\" alt=\"quotation-icon\">
-                    </div>
-                    <p class=\"item-paragraph\">They're great at what they do! And it's unique. They will properly consult with you. The entire team is extremely kind and friendly.They will properly consult with you.</p>
-                    <div class=\"testimonial-author\">
-                        <div class=\"author-name\">Jack Geoffrey<span>tattoo artist</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class=\"testimonial-slider-btn\">
-                <div class=\"slide-button-prev\"><a href=\"\"><span class=\"iconify\" data-icon=\"la:arrow-left\"></span></a></div>
-                <div class=\"slide-button-next\"><a href=\"\"><span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a></div>                
-            </div>            
-
+            <!-- Elfsight Google Reviews | GG reviews Profane -->
+            <script src=\"https://static.elfsight.com/platform/platform.js\" async></script>
+            <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
     </section>
     <!-- End Testimonials Section -->
 
     <!-- Interview Section -->
-    <section id=\"interview\" class=\"interview-wrap\">
-
-        <div class=\"interview-bg-img\" style=\"background: url('images/background/banner-2.jpg');background-size: cover;background-position: center;\">
-
-            <div class=\"container interview-content\">
-                <div class=\"row\">
-                    <div class=\"col-md-8\">
-                        <h2>Présentation du shop</h2>
-                        <div class=\"video-btn\">
-                            <a type=\"button\" data-bs-toggle=\"modal\" data-src=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" data-bs-target=\"#myModal\" class=\"play-btn\"><span class=\"iconify\" data-icon=\"bi:play-fill\"></span></a>
-                            <a class=\"btn\" href=\"#\">watch it now</a>
-                        </div>
-                    </div>
-                    <div class=\"col-md-4\">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
+   
     <!-- End Interview Section -->
 
    
@@ -549,7 +486,6 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
-                <li><a href=\"#interview\" class=\"nav-link\">Interview</a></li>
                 <li><a href=\"#contact\" class=\"nav-link\">Contacts</a></li>
             </ul>
 
@@ -576,8 +512,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     <div class=\"col-md-6\"></div>
                     <div class=\"col-md-6\">
                         <h1>Profane Tattoo</h1>
-                        <p>bienvenu dans mon shop la où tout se passe gnegnegne </p>
-                        <a class=\"btn btn-outline\" href=\"#\" role=\"button\">plus<span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a>
+                        <p>Le studio où vos envies sont encrées a jamais</p>
+                        
                     </div>
                 </div>
                 
@@ -601,13 +537,13 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <div class=\"col-md-6 about-me-content\">                
                     <!-- Sec Title -->
                     <div class=\"sec-title\">
-                        <h1>My <br>Story:</h1>
+                        <h1>Mon <br>histoire:</h1>
                     </div>
 
                     <div class=\"short-description\">
-                        <p>In velit arcu posuere integer. Dolor sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus hac vel ante sit sed scelerisque praesent duis volutpat laoreet.</p>
-                        <p>Nisl, sit molestie commodo congue. Etiam lectus risus in amet. Commodo molestie fames etiam aenean sed. Pellentesque et venenatis amet, tellus hac vel adipiscing sit. Placerat vitae nisl viverra faucibus tincidunt habitasse amet. Nunc, velit nunc, scelerisque imperdiet nunc.</p>
-                        <a class=\"btn btn-blank\" href=\"#\" role=\"button\">Know More<span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a>
+                        <p>Je suis Aurélien Rouze, le propriétaire de Profane Tattoo.</p>
+                        <p>Je suis ici pour t'accompagner dans ton ou tes projets !</p>
+                        
                     </div>
                 </div>
             </div>
@@ -654,9 +590,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
               </div>
             </div>
             <!-- Gallery -->
-            <div class=\"text-center\">                
-                <a class=\"btn btn-black\" href=\"#\" role=\"button\">View All<span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a>
-            </div>
+            
 
         </div>
 
@@ -671,7 +605,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"row\">
                 
                 <!-- GG maps -->
-                
+                <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.2115697116315!2d2.248731276437078!3d50.75311056552571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf9567fcd08c3%3A0x23280fb7b81d1112!2sProfane%20Tattoo!5e0!3m2!1sfr!2sfr!4v1747999844388!5m2!1sfr!2sfr\" width=\"800\" height=\"400\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>
 
             </div>
             
@@ -684,76 +618,16 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     <section class=\"testimonials-wrap\">
 
         <div class=\"container testimonial-slider swiper mySwiper\">
-
-            <div class=\"swiper-wrapper\">
-
-                <!-- Testimonial Layout -->
-                <div class=\"item-content swiper-slide\">
-                    <div class=\"quotation-img\">
-                        <img src=\"images/resource/quotation.png\" alt=\"quotation-icon\">
-                    </div>
-                    <p class=\"item-paragraph\">je suis comblée par l'élégance et la finesse du travail réalisé, chez Profane on a su comprendre ma personalité et guider mes choix pour que ce tatouage soit juste une partie de moi.
-                        Aurélien est un pro un vrai!! et il a réussi à me proposer une version finale de mon projet comme je l'imaginais.
-                        Tres à l'écoute et de très bon conseil. Bravo je recommande à 2000%</p>
-                    <div class=\"testimonial-author\">                        
-                        <div class=\"author-name\">Lydie Dolezsal<span>Cliente</span></div>
-                    </div>
-                </div>
-
-                <div class=\"item-content swiper-slide\">
-                    <div class=\"quotation-img\">
-                        <img src=\"images/resource/quotation.png\" alt=\"quotation-icon\">
-                    </div>
-                    <p class=\"item-paragraph\">Je me suis fait tatouée, chez profane tatoo, tatoueur au top!!!!  Je suis très fière de mes tatouages!! C'est un mec super qui connaît parfaitement son travail, on peut lui faire entièrement confiance, je vais d'ailleurs reprendre rendez-vous !!!</p>
-                    <div class=\"testimonial-author\">                        
-                        <div class=\"author-name\">Cathy Milo<span></span></div>
-                    </div>
-                </div>
-
-                <div class=\"item-content swiper-slide\">
-                    <div class=\"quotation-img\">
-                        <img src=\"images/resource/quotation.png\" alt=\"quotation-icon\">
-                    </div>
-                    <p class=\"item-paragraph\">They're great at what they do! And it's unique. They will properly consult with you. The entire team is extremely kind and friendly.They will properly consult with you.</p>
-                    <div class=\"testimonial-author\">
-                        <div class=\"author-name\">Jack Geoffrey<span>tattoo artist</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class=\"testimonial-slider-btn\">
-                <div class=\"slide-button-prev\"><a href=\"\"><span class=\"iconify\" data-icon=\"la:arrow-left\"></span></a></div>
-                <div class=\"slide-button-next\"><a href=\"\"><span class=\"iconify\" data-icon=\"la:arrow-right\"></span></a></div>                
-            </div>            
-
+            <!-- Elfsight Google Reviews | GG reviews Profane -->
+            <script src=\"https://static.elfsight.com/platform/platform.js\" async></script>
+            <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
     </section>
     <!-- End Testimonials Section -->
 
     <!-- Interview Section -->
-    <section id=\"interview\" class=\"interview-wrap\">
-
-        <div class=\"interview-bg-img\" style=\"background: url('images/background/banner-2.jpg');background-size: cover;background-position: center;\">
-
-            <div class=\"container interview-content\">
-                <div class=\"row\">
-                    <div class=\"col-md-8\">
-                        <h2>Présentation du shop</h2>
-                        <div class=\"video-btn\">
-                            <a type=\"button\" data-bs-toggle=\"modal\" data-src=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" data-bs-target=\"#myModal\" class=\"play-btn\"><span class=\"iconify\" data-icon=\"bi:play-fill\"></span></a>
-                            <a class=\"btn\" href=\"#\">watch it now</a>
-                        </div>
-                    </div>
-                    <div class=\"col-md-4\">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
+   
     <!-- End Interview Section -->
 
    
