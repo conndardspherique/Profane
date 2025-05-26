@@ -67,6 +67,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
     <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
     <link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rozha+One&display=swap\" rel=\"stylesheet\">
+    
 </head>
 
 <body data-bs-spy=\"scroll\" data-bs-target=\"#navbar\" data-bs-root-margin=\"0px 0px -40%\" data-bs-smooth-scroll=\"true\" tabindex=\"0\">
@@ -88,7 +89,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
-                <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
+                <li><a href=\"#gallery\" class=\"nav-link\">Galerie</a></li>
                 <li><a href=\"#contact\" class=\"btn-contact\">Prendre rendez-vous</a></li>
 
             </ul>
@@ -147,8 +148,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     <div class=\"short-description\">
                         <p>
                         Aurélien Rouze, tatoueur passionné et fondateur de Profane Tattoo, vous accueille dans son studio à Saint-Omer pour donner vie à vos idées.
-                        Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
-                        Que vous ayez une idée précise ou simplement une envie, il vous accompagne de la conception à la réalisation, avec écoute et expertise.
+                        
                         </p>
                         <p>
                         Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
@@ -234,8 +234,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
-    <!-- Section Contact -->
-   <!-- Section Contact -->
+   
 <!-- Section Contact -->
 <!-- Section Contact -->
 <footer id=\"contact\" style=\"padding: 50px 0; background-color: #111; color: white; margin: 0;\">
@@ -261,12 +260,11 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
   </form>
 </footer>
 
-
-
-
-    
-
-   
+<footer>
+<style>
+    background-color:rgb(51, 46, 46)
+</style>
+</footer>
 
 <script src=\"js/jquery-1.11.0.min.js\"></script>
 <script src=\"https://code.iconify.design/1/1.0.6/iconify.min.js\"></script>
@@ -325,6 +323,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
     <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
     <link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rozha+One&display=swap\" rel=\"stylesheet\">
+    
 </head>
 
 <body data-bs-spy=\"scroll\" data-bs-target=\"#navbar\" data-bs-root-margin=\"0px 0px -40%\" data-bs-smooth-scroll=\"true\" tabindex=\"0\">
@@ -346,7 +345,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
-                <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
+                <li><a href=\"#gallery\" class=\"nav-link\">Galerie</a></li>
                 <li><a href=\"#contact\" class=\"btn-contact\">Prendre rendez-vous</a></li>
 
             </ul>
@@ -405,8 +404,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                     <div class=\"short-description\">
                         <p>
                         Aurélien Rouze, tatoueur passionné et fondateur de Profane Tattoo, vous accueille dans son studio à Saint-Omer pour donner vie à vos idées.
-                        Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
-                        Que vous ayez une idée précise ou simplement une envie, il vous accompagne de la conception à la réalisation, avec écoute et expertise.
+                        
                         </p>
                         <p>
                         Inspiré par l’art, le symbolisme et la singularité de chaque projet, Aurélien vous propose des créations personnalisées, dans une ambiance conviviale, propre et professionnelle.
@@ -492,8 +490,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
-    <!-- Section Contact -->
-   <!-- Section Contact -->
+   
 <!-- Section Contact -->
 <!-- Section Contact -->
 <footer id=\"contact\" style=\"padding: 50px 0; background-color: #111; color: white; margin: 0;\">
@@ -519,12 +516,11 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
   </form>
 </footer>
 
-
-
-
-    
-
-   
+<footer>
+<style>
+    background-color:rgb(51, 46, 46)
+</style>
+</footer>
 
 <script src=\"js/jquery-1.11.0.min.js\"></script>
 <script src=\"https://code.iconify.design/1/1.0.6/iconify.min.js\"></script>
