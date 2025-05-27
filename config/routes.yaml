@@ -3,3 +3,7 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+appointment_form:
+  path: /rendezvous
+  controller: App\Controller\AppointmentController::form

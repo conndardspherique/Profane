@@ -71,7 +71,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 </head>
 
 <body data-bs-spy=\"scroll\" data-bs-target=\"#navbar\" data-bs-root-margin=\"0px 0px -40%\" data-bs-smooth-scroll=\"true\" tabindex=\"0\">
-
+    
     <div id=\"preloader\">
       <div id=\"loader\"></div>
     </div>
@@ -90,7 +90,11 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Galerie</a></li>
-                <li><a href=\"#contact\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+                <li><a href=\"";
+        // line 46
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment_form");
+        yield "\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+
 
             </ul>
 
@@ -105,7 +109,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 
     </header>
     <!-- End Site Header -->
-
+<main>
     <!-- Billboard -->
     <section id=\"home\" class=\"billboard-wrap\">
 
@@ -234,37 +238,15 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
-   
+   </main>
 <!-- Section Contact -->
 <!-- Section Contact -->
-<footer id=\"contact\" style=\"padding: 50px 0; background-color: #111; color: white; margin: 0;\">
-  <h2 style=\"text-align: center;\">Prise de rendez-vous</h2>
-  <form action=\"traitement.php\" method=\"POST\" style=\"max-width: 600px; margin: auto; background-color: #222; padding: 30px; border-radius: 8px;\">
-    
-    <label for=\"nom\">Nom :</label><br>
-    <input type=\"text\" id=\"nom\" name=\"nom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"prenom\">Prénom :</label><br>
-    <input type=\"text\" id=\"prenom\" name=\"prenom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"email\">Email :</label><br>
-    <input type=\"email\" id=\"email\" name=\"email\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"objet\">Objet :</label><br>
-    <input type=\"text\" id=\"objet\" name=\"objet\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"message\">Message :</label><br>
-    <textarea id=\"message\" name=\"message\" rows=\"6\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"></textarea><br><br>
 
-    <button type=\"submit\" style=\"background-color: #e63946; color: white; border: none; padding: 10px 20px; border-radius: 5px;\">Envoyer</button>
-  </form>
-</footer>
 
-<footer>
-<style>
-    background-color:rgb(51, 46, 46)
-</style>
-</footer>
 
 <script src=\"js/jquery-1.11.0.min.js\"></script>
 <script src=\"https://code.iconify.design/1/1.0.6/iconify.min.js\"></script>
@@ -294,9 +276,17 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     /**
      * @codeCoverageIgnore
      */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
     public function getDebugInfo(): array
     {
-        return array (  48 => 1,);
+        return array (  95 => 46,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -327,7 +317,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 </head>
 
 <body data-bs-spy=\"scroll\" data-bs-target=\"#navbar\" data-bs-root-margin=\"0px 0px -40%\" data-bs-smooth-scroll=\"true\" tabindex=\"0\">
-
+    
     <div id=\"preloader\">
       <div id=\"loader\"></div>
     </div>
@@ -346,7 +336,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Galerie</a></li>
-                <li><a href=\"#contact\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+                <li><a href=\"{{ path('appointment_form') }}\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+
 
             </ul>
 
@@ -361,7 +352,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 
     </header>
     <!-- End Site Header -->
-
+<main>
     <!-- Billboard -->
     <section id=\"home\" class=\"billboard-wrap\">
 
@@ -490,37 +481,15 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <div class=\"elfsight-app-65c86512-56e0-4f38-958c-80f0af4e67cb\" data-elfsight-app-lazy></div>
         </div>
 
-   
+   </main>
 <!-- Section Contact -->
 <!-- Section Contact -->
-<footer id=\"contact\" style=\"padding: 50px 0; background-color: #111; color: white; margin: 0;\">
-  <h2 style=\"text-align: center;\">Prise de rendez-vous</h2>
-  <form action=\"traitement.php\" method=\"POST\" style=\"max-width: 600px; margin: auto; background-color: #222; padding: 30px; border-radius: 8px;\">
-    
-    <label for=\"nom\">Nom :</label><br>
-    <input type=\"text\" id=\"nom\" name=\"nom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"prenom\">Prénom :</label><br>
-    <input type=\"text\" id=\"prenom\" name=\"prenom\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"email\">Email :</label><br>
-    <input type=\"email\" id=\"email\" name=\"email\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"objet\">Objet :</label><br>
-    <input type=\"text\" id=\"objet\" name=\"objet\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"><br><br>
 
-    <label for=\"message\">Message :</label><br>
-    <textarea id=\"message\" name=\"message\" rows=\"6\" required style=\"width: 100%; background-color: #333; color: white; border: none; padding: 10px;\"></textarea><br><br>
 
-    <button type=\"submit\" style=\"background-color: #e63946; color: white; border: none; padding: 10px 20px; border-radius: 5px;\">Envoyer</button>
-  </form>
-</footer>
 
-<footer>
-<style>
-    background-color:rgb(51, 46, 46)
-</style>
-</footer>
 
 <script src=\"js/jquery-1.11.0.min.js\"></script>
 <script src=\"https://code.iconify.design/1/1.0.6/iconify.min.js\"></script>

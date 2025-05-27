@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PRENDRE RENDEZ-VOUS{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/rdv.css') }}">
+{% endblock %}
+
+{% block body %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<div class="container">
+    <h1>Prendre rendez-vous</h1>
+    {{ form_start(form) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.telephone) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.objet) }}
+        {{ form_row(form.message) }}
+        {{ form_row(form.fichier) }}
+        <button type="submit">ENVOYER</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

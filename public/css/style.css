@@ -371,10 +371,10 @@ template {
 
 body {  
   font-size: 18px;
-  color: #555;
+  color: #ff0000;
   line-height: 187%;
   font-weight: 400;
-  background: #fff;
+  background: #ff0000;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-family: 'Raleway', sans-serif;
@@ -1711,6 +1711,39 @@ img{
 
 
 body {
+  margin: 1;
+  background-color: #ffffff;
+}
+
+/* Reset général propre */
+* {
   margin: 0;
-  background-color: #383535;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #ffffff; /* même fond que le site */
+  overflow-x: hidden;
+}
+
+/* Structure principale */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Pour coller le footer en bas */
+main {
+  flex: 1;
+}
+
+/* Footer clean */
+footer {
+  background-color: #ffffff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
