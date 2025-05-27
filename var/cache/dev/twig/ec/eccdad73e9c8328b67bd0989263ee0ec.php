@@ -89,11 +89,12 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
-                <li><a href=\"#gallery\" class=\"nav-link\">Galerie</a></li>
+                <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
                 <li><a href=\"";
         // line 46
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment_form");
-        yield "\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+        yield "\" class=\"btn-contact active\">Prendre rendez-vous</a></li>
+
 
 
             </ul>
@@ -242,6 +243,47 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 <!-- Section Contact -->
 <!-- Section Contact -->
 
+<footer style=\"background-color:#222; color:#eee; padding:20px 10px; text-align:center; font-family:Arial, sans-serif; font-size:14px;\">
+  <div class=\"footer-links\" style=\"margin-bottom:10px;\">
+    <a href=\"/mentions-legales\" class=\"footer-link\">Mentions légales</a> |
+    <a href=\"/conditions-generales\" class=\"footer-link\">Conditions générales</a> |
+    <a href=\"/politique-confidentialite\" class=\"footer-link\">Politique de confidentialité</a> |
+    <a href=\"/contact\" class=\"footer-link\">Contact</a>
+  </div>
+  <div style=\"color:#666;\">
+    &copy; 2025 Profane Tattoo. Tous droits réservés.
+  </div>
+
+  <style>
+    .footer-link {
+      color: #aaa;
+      margin: 0 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-link:hover, .footer-link:focus {
+      color: #1e90ff; /* bleu clair au hover */
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      footer {
+        font-size: 13px;
+        padding: 15px 5px;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .footer-link {
+        margin: 0;
+      }
+    }
+  </style>
+</footer>
 
 
 
@@ -335,8 +377,9 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
-                <li><a href=\"#gallery\" class=\"nav-link\">Galerie</a></li>
-                <li><a href=\"{{ path('appointment_form') }}\" class=\"btn-contact\">Prendre rendez-vous</a></li>
+                <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
+                <li><a href=\"{{ path('appointment_form') }}\" class=\"btn-contact active\">Prendre rendez-vous</a></li>
+
 
 
             </ul>
@@ -485,6 +528,47 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 <!-- Section Contact -->
 <!-- Section Contact -->
 
+<footer style=\"background-color:#222; color:#eee; padding:20px 10px; text-align:center; font-family:Arial, sans-serif; font-size:14px;\">
+  <div class=\"footer-links\" style=\"margin-bottom:10px;\">
+    <a href=\"/mentions-legales\" class=\"footer-link\">Mentions légales</a> |
+    <a href=\"/conditions-generales\" class=\"footer-link\">Conditions générales</a> |
+    <a href=\"/politique-confidentialite\" class=\"footer-link\">Politique de confidentialité</a> |
+    <a href=\"/contact\" class=\"footer-link\">Contact</a>
+  </div>
+  <div style=\"color:#666;\">
+    &copy; 2025 Profane Tattoo. Tous droits réservés.
+  </div>
+
+  <style>
+    .footer-link {
+      color: #aaa;
+      margin: 0 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-link:hover, .footer-link:focus {
+      color: #1e90ff; /* bleu clair au hover */
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      footer {
+        font-size: 13px;
+        padding: 15px 5px;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .footer-link {
+        margin: 0;
+      }
+    }
+  </style>
+</footer>
 
 
 

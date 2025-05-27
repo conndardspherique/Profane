@@ -1747,3 +1747,83 @@ footer {
   padding: 1rem;
   text-align: center;
 }
+
+
+/* Bouton "Prendre rendez-vous" dans la navbar */
+.btn-contact {
+    background-color: rgb(184, 45, 45); /* rouge */
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-left: 15px; /* Décale vers la droite */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-contact {
+    background-color: rgb(184, 45, 45);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-left: 15px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact::after {
+    content: '';
+    position: absolute;
+    left: 20%;
+    bottom: -5px;
+    width: 60%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover::after {
+    background-color: white;
+}
+
+.btn-contact:hover {
+    background-color: rgb(224, 83, 83);
+}
+
+
+/* Supprimer la ligne noire collée */
+.header-main-nav .nav-link {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Supprimer les effets visuels persistants */
+.header-main-nav .nav-link.active {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    color: inherit;
+}
+
+/* Supprimer toute ligne noire persistante sous "Prendre rendez-vous" */
+.btn-contact,
+.btn-contact:focus,
+.btn-contact:active,
+.btn-contact.active,
+.btn-contact.nav-link.active {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.btn-contact::after {
+    display: none !important; /* au cas où un effet l'aurait laissé actif */
+}
+
+/* Supprime aussi toute ligne des autres liens au cas où */
+.header-main-nav .nav-link,
+.header-main-nav .nav-link.active {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
