@@ -93,7 +93,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"";
         // line 46
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment_form");
-        yield "\" class=\"btn-contact active\">Prendre rendez-vous</a></li>
+        yield "\" class=\"nav-link cta\">Prendre rendez-vous</a></li>
+
 
 
 
@@ -378,7 +379,8 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
                 <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
-                <li><a href=\"{{ path('appointment_form') }}\" class=\"btn-contact active\">Prendre rendez-vous</a></li>
+                <li><a href=\"{{ path('appointment_form') }}\" class=\"nav-link cta\">Prendre rendez-vous</a></li>
+
 
 
 

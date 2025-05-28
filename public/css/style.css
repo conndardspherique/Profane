@@ -1827,3 +1827,25 @@ footer {
     border-bottom: none !important;
     box-shadow: none !important;
 }
+
+.nav-link.cta {
+  background-color: #d32f2f; /* rouge foncé */
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .nav-link.cta {
+    margin-left: 1rem;
+    margin-right: 0;
+    max-width: none;
+    display: inline-block;
+  }
+}
