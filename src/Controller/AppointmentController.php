@@ -18,18 +18,14 @@ class AppointmentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Données du formulaire
-            $data = $form->getData();
+    $data = $form->getData();
+    $mailjet->sendEmail($data);
 
-            // Fichier joint, si ton form l’a
-            $fichier = $form->get('fichier')->getData() ?? null;
+    $this->addFlash('success', 'Votre demande a bien été envoyée !');
 
-            // Envoi du mail via ton service
-            $mailjet->sendEmail($data, $fichier);
+    return $this->redirectToRoute('appointment_form');
+}
 
-            $this->addFlash('success', 'Votre demande a bien été envoyée !');
-            return $this->redirectToRoute('appointment_form'); // ou une autre page
-        }
 
         return $this->render('rendezvous.html.twig', [
             'form' => $form->createView()

@@ -191,14 +191,40 @@ class __TwigTemplate_29cbfc7b1220400063ec1eabf5abf0bc extends Template
         // line 42
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 42, $this->source); })()), "message", [], "any", false, false, false, 42), 'row');
         yield "
-            ";
-        // line 43
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "fichier", [], "any", false, false, false, 43), 'row');
-        yield "
+            
             <button type=\"submit\" class=\"btn-submit\">Envoyer</button>
-        ";
-        // line 45
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), 'form_end');
+
+            ";
+        // line 46
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "flashes", [], "any", false, false, false, 46));
+        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+            // line 47
+            yield "    ";
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 48
+                yield "        <div class=\"alert alert-";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["label"], "html", null, true);
+                yield "\">
+            ";
+                // line 49
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+                yield "
+        </div>
+    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['label'], $context['messages'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 53
+        yield "        ";
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 53, $this->source); })()), 'form_end');
         yield "
     </div>
 </div>
@@ -276,7 +302,7 @@ class __TwigTemplate_29cbfc7b1220400063ec1eabf5abf0bc extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  201 => 45,  196 => 43,  192 => 42,  188 => 41,  184 => 40,  180 => 39,  176 => 38,  172 => 37,  168 => 36,  150 => 21,  141 => 15,  137 => 14,  132 => 11,  119 => 10,  106 => 7,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  226 => 53,  213 => 49,  208 => 48,  203 => 47,  199 => 46,  192 => 42,  188 => 41,  184 => 40,  180 => 39,  176 => 38,  172 => 37,  168 => 36,  150 => 21,  141 => 15,  137 => 14,  132 => 11,  119 => 10,  106 => 7,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -323,8 +349,16 @@ class __TwigTemplate_29cbfc7b1220400063ec1eabf5abf0bc extends Template
             {{ form_row(form.date) }}
             {{ form_row(form.objet) }}
             {{ form_row(form.message) }}
-            {{ form_row(form.fichier) }}
+            
             <button type=\"submit\" class=\"btn-submit\">Envoyer</button>
+
+            {% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class=\"alert alert-{{ label }}\">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
         {{ form_end(form) }}
     </div>
 </div>

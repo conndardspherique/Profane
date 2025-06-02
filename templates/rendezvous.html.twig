@@ -40,8 +40,16 @@
             {{ form_row(form.date) }}
             {{ form_row(form.objet) }}
             {{ form_row(form.message) }}
-            {{ form_row(form.fichier) }}
+            
             <button type="submit" class="btn-submit">Envoyer</button>
+
+            {% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
         {{ form_end(form) }}
     </div>
 </div>

@@ -80,7 +80,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     <header class=\"header-wrap\">
 
         <div class=\"header-logo\">
-            <a class=\"site-logo\" href=\"index.html\">
+            <a class=\"site-logo\">
                 <img src=\"images/.png\" alt=\"logo\">
             </a>
         </div>
@@ -369,7 +369,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
     <header class=\"header-wrap\">
 
         <div class=\"header-logo\">
-            <a class=\"site-logo\" href=\"index.html\">
+            <a class=\"site-logo\">
                 <img src=\"images/.png\" alt=\"logo\">
             </a>
         </div>
