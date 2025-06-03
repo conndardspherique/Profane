@@ -33,11 +33,11 @@ class MailjetService
         ],
         'To' => [[
             'Email' => 'weare265487913@protonmail.com',
-            'Name' => 'Le Tatoueur'
+            'Name' => 'Profane Tattoo'
         ]],
         'ReplyTo' => [
             'Email' => $data['email'],
-            'Name' => $data['nom']
+            
         ],
         'Subject' => "Nouvelle demande de rendez-vous",
         'TextPart' => "Demande envoyée par " . $data['nom'],
