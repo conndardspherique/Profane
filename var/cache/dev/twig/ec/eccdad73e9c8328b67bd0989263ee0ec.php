@@ -198,7 +198,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 
               <div class=\"col-md-3\">
                 <a href=\"images/gallery/3.jpg\" title=\"T5\" class=\"image-link\"><img src=\"images/gallery/3.jpg\" alt=\"gallery-img\"></a>
-                <a href=\"images/gallery/7.jpg\" title=\"T6\" class=\"image-link\"><img src=\"images/gallery/7.jpg\" alt=\"gallery-img\"></a>
+                <a href=\"images/gallery/7.jpeg\" title=\"T6\" class=\"image-link\"><img src=\"images/gallery/7.jpeg\" alt=\"gallery-img\"></a>
               </div>
 
               <div class=\"col-md-3\">
@@ -484,7 +484,7 @@ class __TwigTemplate_be6c5d8a9d4655a477ebcc6f04168c83 extends Template
 
               <div class=\"col-md-3\">
                 <a href=\"images/gallery/3.jpg\" title=\"T5\" class=\"image-link\"><img src=\"images/gallery/3.jpg\" alt=\"gallery-img\"></a>
-                <a href=\"images/gallery/7.jpg\" title=\"T6\" class=\"image-link\"><img src=\"images/gallery/7.jpg\" alt=\"gallery-img\"></a>
+                <a href=\"images/gallery/7.jpeg\" title=\"T6\" class=\"image-link\"><img src=\"images/gallery/7.jpeg\" alt=\"gallery-img\"></a>
               </div>
 
               <div class=\"col-md-3\">

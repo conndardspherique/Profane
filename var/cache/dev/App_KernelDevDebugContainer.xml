@@ -376,6 +376,10 @@
     <service id="App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
+    <service id="App\Repository\GalleryImageRepository" class="App\Repository\GalleryImageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Service\MailjetService" class="App\Service\MailjetService" autowire="true" autoconfigure="true">
       <argument>%env(MAILJET_API_KEY)%</argument>
       <argument>%env(MAILJET_API_SECRET)%</argument>
@@ -5256,7 +5260,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.GIuJv7e"/>
+      <argument type="service" id=".service_locator.0ZrV_Lk"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7296,6 +7300,8 @@
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GalleryImageRepository" class="App\Repository\GalleryImageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GalleryImageRepository" class="App\Repository\GalleryImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8152,9 +8158,11 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0ZrV_Lk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="App\Repository\GalleryImageRepository" type="service_closure" id="App\Repository\GalleryImageRepository"/>
+      </argument>
     </service>
     <service id=".service_locator.BxSdgVt" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8490,6 +8498,10 @@
       <argument type="collection">
         <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
       </argument>
+    </service>
+    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
     </service>
     <service id=".service_locator.DOrA4Nm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
