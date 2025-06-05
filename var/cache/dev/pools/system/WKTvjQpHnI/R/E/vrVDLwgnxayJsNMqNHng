@@ -1,0 +1,29 @@
+<?php //easyadmin.routes.fqcn_to_route
+
+return [PHP_INT_MAX, [
+    'App\\Controller\\Admin\\DashboardController' => [
+        '' => [
+            '' => 'admin',
+        ],
+        'App\\Controller\\Admin\\PhotoCrudController' => [
+            'index' => 'admin_photo_index',
+            'new' => 'admin_photo_new',
+            'batchDelete' => 'admin_photo_batch_delete',
+            'autocomplete' => 'admin_photo_autocomplete',
+            'renderFilters' => 'admin_photo_render_filters',
+            'edit' => 'admin_photo_edit',
+            'delete' => 'admin_photo_delete',
+            'detail' => 'admin_photo_detail',
+        ],
+        'App\\Controller\\Admin\\TestCrudController' => [
+            'index' => 'admin_test_index',
+            'new' => 'admin_test_new',
+            'batchDelete' => 'admin_test_batch_delete',
+            'autocomplete' => 'admin_test_autocomplete',
+            'renderFilters' => 'admin_test_render_filters',
+            'edit' => 'admin_test_edit',
+            'delete' => 'admin_test_delete',
+            'detail' => 'admin_test_detail',
+        ],
+    ],
+]];
