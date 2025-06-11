@@ -2365,17 +2365,17 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v4.24.7",
-            "version_normalized": "4.24.7.0",
+            "version": "v4.24.8",
+            "version_normalized": "4.24.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "b61cd46c454d853438ded3ca21eac1ad537589aa"
+                "reference": "89534a8753b7535ec7a70fd3a1755ad019bc37c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/b61cd46c454d853438ded3ca21eac1ad537589aa",
-                "reference": "b61cd46c454d853438ded3ca21eac1ad537589aa",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/89534a8753b7535ec7a70fd3a1755ad019bc37c2",
+                "reference": "89534a8753b7535ec7a70fd3a1755ad019bc37c2",
                 "shasum": ""
             },
             "require": {
@@ -2426,7 +2426,7 @@
                 "symfony/process": "^5.4|^6.0|^7.0",
                 "symfony/web-link": "^5.4|^6.0|^7.0"
             },
-            "time": "2025-05-14T17:55:05+00:00",
+            "time": "2025-06-09T20:14:41+00:00",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2458,7 +2458,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.24.7"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.24.8"
             },
             "funding": [
                 {
