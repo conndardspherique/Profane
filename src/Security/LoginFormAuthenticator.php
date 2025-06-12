@@ -11,7 +11,6 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
-use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
@@ -33,10 +32,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
         $password = $request->request->get('password', '');
         $csrfToken = $request->request->get('_csrf_token');
 
-        $request->request->set('_username', $email);
-
-        $request->getSession()->set(Security::LAST_USERNAME, $email);
-
+        // Ne plus utiliser Security::LAST_USERNAME (plus supporté)
         return new Passport(
             new UserBadge($email),
             new PasswordCredentials($password),
@@ -53,7 +49,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('app_home')); // change 'app_home' selon ta route d'accueil
+        return new RedirectResponse($this->urlGenerator->generate('app_home')); // modifie selon ta route d'accueil
     }
 
     protected function getLoginUrl(Request $request): string

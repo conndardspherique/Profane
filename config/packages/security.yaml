@@ -18,16 +18,12 @@ security:
             lazy: true
             provider: app_user_provider
 
-            # Authentification par formulaire
-            form_login:
-                login_path: login
-                check_path: login
-                default_target_path: /admin
+            # Authenticator personnalisé
+            custom_authenticator: App\Security\LoginFormAuthenticator
 
-            # Déconnexion (route obligatoire pour EasyAdmin)
             logout:
                 path: logout
-                target: login  # Redirection vers /login après déconnexion
+                target: login
 
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
