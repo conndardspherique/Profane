@@ -123,6 +123,8 @@ class __TwigTemplate_ca504b925f2b7f879f906d3904bd3248 extends Template
 
 <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
 <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap\" rel=\"stylesheet\">
+
 <link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rozha+One&display=swap\" rel=\"stylesheet\">
 ";
         
@@ -134,7 +136,7 @@ class __TwigTemplate_ca504b925f2b7f879f906d3904bd3248 extends Template
         yield from [];
     }
 
-    // line 25
+    // line 27
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -147,9 +149,19 @@ class __TwigTemplate_ca504b925f2b7f879f906d3904bd3248 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 26
+        // line 28
         yield "
+
 <style> 
+
+.header-main-nav li a,
+.header-menu-toggle span {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
 /* Style de base pour la galerie */
 .gallery {
   display: grid;
@@ -838,7 +850,7 @@ img{
   text-align: center;
   z-index: 14;
   box-shadow: 0px 2px 24px rgb(0 0 0 / 3%);
-   font-family: Oswald;
+   font-family: 'Raleway', sans-serif;
 }
 
 .header-wrap .header-logo {
@@ -860,7 +872,7 @@ img{
   list-style: none;
   margin-left: 0;
   margin-top: 58px;
-   font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
 }
 
 .header-wrap .header-nav-wrap ul li{
@@ -872,7 +884,7 @@ img{
 }
 
 .header-wrap .header-nav-wrap .header-main-nav li a{
-  font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
   padding: 0;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -936,7 +948,7 @@ img{
   width: 42px;
   line-height: 42px;
   
-  font-family: Oswald;
+   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
@@ -1315,7 +1327,7 @@ img{
 }
 
 .services-wrap .chart .percent{
-  font-family: Oswald;
+ font-family: 'Raleway', sans-serif;
   font-size: 78px;
   line-height: 294px;
   letter-spacing: -0.02em;
@@ -1331,7 +1343,7 @@ img{
 
 .services-wrap .chart p{
   margin-top: 18px;
-  font-family: Oswald;
+ font-family: 'Raleway', sans-serif;
   font-weight: 300;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2038,6 +2050,49 @@ footer {
   }
 }
 
+/* Style galerie tattoo */
+.gallery-wrap .popup-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+.popup-gallery a.image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+}
+
+.popup-gallery a.image-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.popup-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsive 2 à 3 colonnes selon la taille */
+@media (min-width: 768px) {
+    .popup-gallery a.image-link {
+        width: 280px;
+    }
+}
+
+@media (max-width: 767px) {
+    .popup-gallery a.image-link {
+        width: 100%;
+    }
+}
 
 
 </style>
@@ -2054,15 +2109,15 @@ footer {
         <nav class=\"header-nav-wrap\">
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"";
-        // line 1931
+        // line 1986
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         yield "\" class=\"nav-link active\">Accueil</a></li>
                <li><a href=\"";
-        // line 1932
+        // line 1987
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_galerie");
         yield "\" class=\"nav-link\">Gallerie</a></li>
                 <li><a href=\"";
-        // line 1933
+        // line 1988
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment_form");
         yield "\" class=\"nav-link cta\">Prendre rendez-vous</a></li>
 
@@ -2092,28 +2147,28 @@ footer {
     <div class=\"container-fluid\">
         <div class=\"row popup-gallery\">
             ";
-        // line 1960
+        // line 2015
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(Twig\Extension\CoreExtension::batch((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 1960, $this->source); })()), 2));
+        $context['_seq'] = CoreExtension::ensureTraversable(Twig\Extension\CoreExtension::batch((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 2015, $this->source); })()), 2));
         foreach ($context['_seq'] as $context["_key"] => $context["imagesRow"]) {
-            // line 1961
+            // line 2016
             yield "                <div class=\"col-md-3\">
                     ";
-            // line 1962
+            // line 2017
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["imagesRow"]);
             foreach ($context['_seq'] as $context["_key"] => $context["img"]) {
-                // line 1963
+                // line 2018
                 yield "                        <a href=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images" . CoreExtension::getAttribute($this->env, $this->source, $context["img"], "filename", [], "any", false, false, false, 1963))), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images" . CoreExtension::getAttribute($this->env, $this->source, $context["img"], "filename", [], "any", false, false, false, 2018))), "html", null, true);
                 yield "\" title=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["img"], "altText", [], "any", false, false, false, 1963), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["img"], "altText", [], "any", false, false, false, 2018), "html", null, true);
                 yield "\" class=\"image-link\">
                             <img src=\"";
-                // line 1964
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images/" . CoreExtension::getAttribute($this->env, $this->source, $context["img"], "filename", [], "any", false, false, false, 1964))), "html", null, true);
+                // line 2019
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images/" . CoreExtension::getAttribute($this->env, $this->source, $context["img"], "filename", [], "any", false, false, false, 2019))), "html", null, true);
                 yield "\" alt=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["img"], "altText", [], "any", false, false, false, 1964), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["img"], "altText", [], "any", false, false, false, 2019), "html", null, true);
                 yield "\" class=\"img-fluid mb-2\">
                         </a>
                     ";
@@ -2121,14 +2176,14 @@ footer {
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['img'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 1967
+            // line 2022
             yield "                </div>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['imagesRow'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 1969
+        // line 2024
         yield "        </div>
     </div>
 </section>
@@ -2136,17 +2191,8 @@ footer {
 <!-- Section Contact -->
 
 <footer style=\"background-color:#222; color:#eee; padding:20px 10px; text-align:center; font-family:Arial, sans-serif; font-size:14px;\">
-  <div class=\"footer-links\" style=\"margin-bottom:10px;\">
-    <a href=\"/mentions-legales\" class=\"footer-link\">Mentions légales</a> |
-    <a href=\"/conditions-generales\" class=\"footer-link\">Conditions générales</a> |
-    <a href=\"/politique-confidentialite\" class=\"footer-link\">Politique de confidentialité</a> |
-    <a href=\"/contact\" class=\"footer-link\">Contact</a>
-  </div>
-  <div style=\"color:#666;\">
-    &copy; 2025 Profane Tattoo. Tous droits réservés.
-  </div>
 
-  <style>
+<style>
     .footer-link {
       color: #aaa;
       margin: 0 8px;
@@ -2175,6 +2221,16 @@ footer {
       }
     }
   </style>
+  <div class=\"footer-links\" style=\"margin-bottom:10px;\">
+    <a href=\"/mentions-legales\" class=\"footer-link\">Mentions légales</a> |
+    <a href=\"/conditions-generales\" class=\"footer-link\">Conditions générales</a> |
+    <a href=\"/politique-confidentialite\" class=\"footer-link\">Politique de confidentialité</a> |
+  </div>
+  <div style=\"color:#666;\">
+    &copy; 2025 Profane Tattoo. Tous droits réservés.
+  </div>
+
+  
 </footer>
 
 
@@ -2218,7 +2274,7 @@ footer {
      */
     public function getDebugInfo(): array
     {
-        return array (  2132 => 1969,  2125 => 1967,  2114 => 1964,  2107 => 1963,  2103 => 1962,  2100 => 1961,  2096 => 1960,  2066 => 1933,  2062 => 1932,  2058 => 1931,  151 => 26,  138 => 25,  121 => 18,  117 => 17,  113 => 16,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  2187 => 2024,  2180 => 2022,  2169 => 2019,  2162 => 2018,  2158 => 2017,  2155 => 2016,  2151 => 2015,  2121 => 1988,  2117 => 1987,  2113 => 1986,  153 => 28,  140 => 27,  121 => 18,  117 => 17,  113 => 16,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -2244,12 +2300,24 @@ footer {
 
 <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
 <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap\" rel=\"stylesheet\">
+
 <link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rozha+One&display=swap\" rel=\"stylesheet\">
 {% endblock %}
 
 {% block body %}
 
+
 <style> 
+
+.header-main-nav li a,
+.header-menu-toggle span {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
 /* Style de base pour la galerie */
 .gallery {
   display: grid;
@@ -2938,7 +3006,7 @@ img{
   text-align: center;
   z-index: 14;
   box-shadow: 0px 2px 24px rgb(0 0 0 / 3%);
-   font-family: Oswald;
+   font-family: 'Raleway', sans-serif;
 }
 
 .header-wrap .header-logo {
@@ -2960,7 +3028,7 @@ img{
   list-style: none;
   margin-left: 0;
   margin-top: 58px;
-   font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
 }
 
 .header-wrap .header-nav-wrap ul li{
@@ -2972,7 +3040,7 @@ img{
 }
 
 .header-wrap .header-nav-wrap .header-main-nav li a{
-  font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
   padding: 0;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3036,7 +3104,7 @@ img{
   width: 42px;
   line-height: 42px;
   
-  font-family: Oswald;
+   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
@@ -3415,7 +3483,7 @@ img{
 }
 
 .services-wrap .chart .percent{
-  font-family: Oswald;
+ font-family: 'Raleway', sans-serif;
   font-size: 78px;
   line-height: 294px;
   letter-spacing: -0.02em;
@@ -3431,7 +3499,7 @@ img{
 
 .services-wrap .chart p{
   margin-top: 18px;
-  font-family: Oswald;
+ font-family: 'Raleway', sans-serif;
   font-weight: 300;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4138,6 +4206,49 @@ footer {
   }
 }
 
+/* Style galerie tattoo */
+.gallery-wrap .popup-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+.popup-gallery a.image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+}
+
+.popup-gallery a.image-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.popup-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsive 2 à 3 colonnes selon la taille */
+@media (min-width: 768px) {
+    .popup-gallery a.image-link {
+        width: 280px;
+    }
+}
+
+@media (max-width: 767px) {
+    .popup-gallery a.image-link {
+        width: 100%;
+    }
+}
 
 
 </style>
@@ -4198,17 +4309,8 @@ footer {
 <!-- Section Contact -->
 
 <footer style=\"background-color:#222; color:#eee; padding:20px 10px; text-align:center; font-family:Arial, sans-serif; font-size:14px;\">
-  <div class=\"footer-links\" style=\"margin-bottom:10px;\">
-    <a href=\"/mentions-legales\" class=\"footer-link\">Mentions légales</a> |
-    <a href=\"/conditions-generales\" class=\"footer-link\">Conditions générales</a> |
-    <a href=\"/politique-confidentialite\" class=\"footer-link\">Politique de confidentialité</a> |
-    <a href=\"/contact\" class=\"footer-link\">Contact</a>
-  </div>
-  <div style=\"color:#666;\">
-    &copy; 2025 Profane Tattoo. Tous droits réservés.
-  </div>
 
-  <style>
+<style>
     .footer-link {
       color: #aaa;
       margin: 0 8px;
@@ -4237,6 +4339,16 @@ footer {
       }
     }
   </style>
+  <div class=\"footer-links\" style=\"margin-bottom:10px;\">
+    <a href=\"/mentions-legales\" class=\"footer-link\">Mentions légales</a> |
+    <a href=\"/conditions-generales\" class=\"footer-link\">Conditions générales</a> |
+    <a href=\"/politique-confidentialite\" class=\"footer-link\">Politique de confidentialité</a> |
+  </div>
+  <div style=\"color:#666;\">
+    &copy; 2025 Profane Tattoo. Tous droits réservés.
+  </div>
+
+  
 </footer>
 
 

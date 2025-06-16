@@ -21,7 +21,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Tatoueur Admin');
+            ->setTitle('Profane Tattoo Admin');
     }
 
     public function configureMenuItems(): iterable

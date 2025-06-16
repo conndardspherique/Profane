@@ -19,12 +19,24 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rozha+One&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
 
+
 <style> 
+
+.header-main-nav li a,
+.header-menu-toggle span {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
 /* Style de base pour la galerie */
 .gallery {
   display: grid;
@@ -713,7 +725,7 @@ img{
   text-align: center;
   z-index: 14;
   box-shadow: 0px 2px 24px rgb(0 0 0 / 3%);
-   font-family: Oswald;
+   font-family: 'Raleway', sans-serif;
 }
 
 .header-wrap .header-logo {
@@ -735,7 +747,7 @@ img{
   list-style: none;
   margin-left: 0;
   margin-top: 58px;
-   font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
 }
 
 .header-wrap .header-nav-wrap ul li{
@@ -747,7 +759,7 @@ img{
 }
 
 .header-wrap .header-nav-wrap .header-main-nav li a{
-  font-family: Oswald;
+  font-family: 'Raleway', sans-serif;
   padding: 0;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -811,7 +823,7 @@ img{
   width: 42px;
   line-height: 42px;
   
-  font-family: Oswald;
+   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
@@ -1190,7 +1202,7 @@ img{
 }
 
 .services-wrap .chart .percent{
-  font-family: Oswald;
+ font-family: 'Raleway', sans-serif;
   font-size: 78px;
   line-height: 294px;
   letter-spacing: -0.02em;
@@ -1206,7 +1218,7 @@ img{
 
 .services-wrap .chart p{
   margin-top: 18px;
-  font-family: Oswald;
+ font-family: 'Raleway', sans-serif;
   font-weight: 300;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1913,6 +1925,49 @@ footer {
   }
 }
 
+/* Style galerie tattoo */
+.gallery-wrap .popup-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+.popup-gallery a.image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+}
+
+.popup-gallery a.image-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.popup-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsive 2 à 3 colonnes selon la taille */
+@media (min-width: 768px) {
+    .popup-gallery a.image-link {
+        width: 280px;
+    }
+}
+
+@media (max-width: 767px) {
+    .popup-gallery a.image-link {
+        width: 100%;
+    }
+}
 
 
 </style>
@@ -1973,17 +2028,8 @@ footer {
 <!-- Section Contact -->
 
 <footer style="background-color:#222; color:#eee; padding:20px 10px; text-align:center; font-family:Arial, sans-serif; font-size:14px;">
-  <div class="footer-links" style="margin-bottom:10px;">
-    <a href="/mentions-legales" class="footer-link">Mentions légales</a> |
-    <a href="/conditions-generales" class="footer-link">Conditions générales</a> |
-    <a href="/politique-confidentialite" class="footer-link">Politique de confidentialité</a> |
-    <a href="/contact" class="footer-link">Contact</a>
-  </div>
-  <div style="color:#666;">
-    &copy; 2025 Profane Tattoo. Tous droits réservés.
-  </div>
 
-  <style>
+<style>
     .footer-link {
       color: #aaa;
       margin: 0 8px;
@@ -2012,6 +2058,16 @@ footer {
       }
     }
   </style>
+  <div class="footer-links" style="margin-bottom:10px;">
+    <a href="/mentions-legales" class="footer-link">Mentions légales</a> |
+    <a href="/conditions-generales" class="footer-link">Conditions générales</a> |
+    <a href="/politique-confidentialite" class="footer-link">Politique de confidentialité</a> |
+  </div>
+  <div style="color:#666;">
+    &copy; 2025 Profane Tattoo. Tous droits réservés.
+  </div>
+
+  
 </footer>
 
 
