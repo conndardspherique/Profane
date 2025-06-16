@@ -1,14 +1,16 @@
 <?php
-// src/Controller/Admin/PhotoCrudController.php
 
 namespace App\Controller\Admin;
 
 use App\Entity\Photo;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 
 class PhotoCrudController extends AbstractCrudController
 {
@@ -20,17 +22,23 @@ class PhotoCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            // Champ formulaire pour uploader l'image, via VichUploader
-            TextField::new('imageFile')
+            FormField::addPanel('Informations de l\'image'),
+
+            TextField::new('filename')
+                ->hideOnForm(),
+
+            TextareaField::new('altText', 'Texte alternatif'),
+
+            Field::new('imageFile', 'Image')
                 ->setFormType(VichImageType::class)
                 ->onlyOnForms(),
 
-            // Affiche l'image sur la liste ou détail
-            ImageField::new('filename')
+            ImageField::new('filename', 'Aperçu')
                 ->setBasePath('/uploads/images')
                 ->onlyOnIndex(),
 
             DateTimeField::new('createdAt')->hideOnForm(),
+            DateTimeField::new('updatedAt')->hideOnForm(),
         ];
     }
 }

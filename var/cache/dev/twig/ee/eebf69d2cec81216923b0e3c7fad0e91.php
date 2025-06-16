@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* @ea/components/ActionMenu.html.twig */
+/* @EasyAdmin/components/ActionMenu.html.twig */
 class __TwigTemplate_034f8dc59e3bc06d56786fc82c17ffeb extends Template
 {
     private Source $source;
@@ -40,10 +40,10 @@ class __TwigTemplate_034f8dc59e3bc06d56786fc82c17ffeb extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu.html.twig"));
 
         // line 5
         yield "<div ";
@@ -91,7 +91,7 @@ class __TwigTemplate_034f8dc59e3bc06d56786fc82c17ffeb extends Template
      */
     public function getTemplateName(): string
     {
-        return "@ea/components/ActionMenu.html.twig";
+        return "@EasyAdmin/components/ActionMenu.html.twig";
     }
 
     /**
@@ -119,6 +119,6 @@ class __TwigTemplate_034f8dc59e3bc06d56786fc82c17ffeb extends Template
 <div {{ attributes.defaults({class: 'dropdown'}) }}>
     {% block content %}{% endblock %}
 </div>
-", "@ea/components/ActionMenu.html.twig", "/home/jeremy/profane/Profane/vendor/easycorp/easyadmin-bundle/templates/components/ActionMenu.html.twig");
+", "@EasyAdmin/components/ActionMenu.html.twig", "/home/jeremy/profane/Profane/vendor/easycorp/easyadmin-bundle/templates/components/ActionMenu.html.twig");
     }
 }

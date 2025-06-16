@@ -14,11 +14,8 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        $url = $this->container->get(AdminUrlGenerator::class)
-            ->setController(PhotoCrudController::class)
-            ->generateUrl();
+       return $this->redirectToRoute('admin_gallery');
 
-        return $this->redirect($url);
     }
 
     public function configureDashboard(): Dashboard
@@ -29,7 +26,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Galerie Photos', 'fa fa-image', Photo::class);
+        //yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        //yield MenuItem::linkToRoute('Galerie Photos', 'fa fa-image', 'admin_gallery');
+        yield MenuItem::linkToCrud('Galerie Images', 'fas fa-image', Photo::class);
     }
+
 }

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Galerie Photos</h1>
+
+        <div class="row">
+            {% for photo in photos %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('images/gallery' ~ photo.filename) }}" class="card-img-top" alt="{{ photo.altText ?? 'Photo' }}">
+                        {% if photo.altText %}
+                            <div class="card-body">
+                                <p class="card-text text-center">{{ photo.altText }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <p class="text-center">Aucune photo pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

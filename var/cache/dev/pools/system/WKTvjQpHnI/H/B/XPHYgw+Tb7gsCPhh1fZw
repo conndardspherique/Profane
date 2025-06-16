@@ -46,44 +46,4 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => 'App\\Controller\\Admin\\PhotoCrudController',
         'crudAction' => 'detail',
     ],
-    'admin_test_index' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'index',
-    ],
-    'admin_test_new' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'new',
-    ],
-    'admin_test_batch_delete' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'batchDelete',
-    ],
-    'admin_test_autocomplete' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'autocomplete',
-    ],
-    'admin_test_render_filters' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'renderFilters',
-    ],
-    'admin_test_edit' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'edit',
-    ],
-    'admin_test_delete' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'delete',
-    ],
-    'admin_test_detail' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\TestCrudController',
-        'crudAction' => 'detail',
-    ],
 ]];

@@ -89,7 +89,10 @@ class __TwigTemplate_542af48cfaed3faa47f3c100bf236a04 extends Template
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
-                <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
+               <li><a href=\"";
+        // line 45
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_galerie");
+        yield "\" class=\"nav-link\">Gallerie</a></li>
                 <li><a href=\"";
         // line 46
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment_form");
@@ -329,7 +332,7 @@ class __TwigTemplate_542af48cfaed3faa47f3c100bf236a04 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  95 => 46,  48 => 1,);
+        return array (  98 => 46,  94 => 45,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -378,7 +381,7 @@ class __TwigTemplate_542af48cfaed3faa47f3c100bf236a04 extends Template
             <ul id=\"navbar\" class=\"header-main-nav\">
                 <li><a href=\"#home\" class=\"nav-link active\">Accueil</a></li>
                 <li><a href=\"#about\" class=\"nav-link\">A propos</a></li>
-                <li><a href=\"#gallery\" class=\"nav-link\">Gallerie</a></li>
+               <li><a href=\"{{ path('app_galerie') }}\" class=\"nav-link\">Gallerie</a></li>
                 <li><a href=\"{{ path('appointment_form') }}\" class=\"nav-link cta\">Prendre rendez-vous</a></li>
 
 

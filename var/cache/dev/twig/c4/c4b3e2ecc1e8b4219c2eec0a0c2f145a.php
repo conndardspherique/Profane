@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* @ea/components/ActionMenu/ActionList.html.twig */
+/* @EasyAdmin/components/ActionMenu/ActionList.html.twig */
 class __TwigTemplate_72129afc3c28233eb228ebe9b1c3e7e7 extends Template
 {
     private Source $source;
@@ -40,10 +40,10 @@ class __TwigTemplate_72129afc3c28233eb228ebe9b1c3e7e7 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList.html.twig"));
 
         // line 1
         yield "<ul ";
@@ -91,7 +91,7 @@ class __TwigTemplate_72129afc3c28233eb228ebe9b1c3e7e7 extends Template
      */
     public function getTemplateName(): string
     {
-        return "@ea/components/ActionMenu/ActionList.html.twig";
+        return "@EasyAdmin/components/ActionMenu/ActionList.html.twig";
     }
 
     /**
@@ -115,6 +115,6 @@ class __TwigTemplate_72129afc3c28233eb228ebe9b1c3e7e7 extends Template
         return new Source("<ul {{ attributes.defaults({class: 'dropdown-menu dropdown-menu-end'}) }}>
     {% block content %}{% endblock %}
 </ul>
-", "@ea/components/ActionMenu/ActionList.html.twig", "/home/jeremy/profane/Profane/vendor/easycorp/easyadmin-bundle/templates/components/ActionMenu/ActionList.html.twig");
+", "@EasyAdmin/components/ActionMenu/ActionList.html.twig", "/home/jeremy/profane/Profane/vendor/easycorp/easyadmin-bundle/templates/components/ActionMenu/ActionList.html.twig");
     }
 }

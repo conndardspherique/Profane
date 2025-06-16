@@ -282,6 +282,8 @@
       <parameter key="gallery_images" type="collection">
         <parameter key="uri_prefix">/uploads/images</parameter>
         <parameter key="upload_destination">/home/jeremy/profane/Profane/public/uploads/images</parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
         <parameter key="namer" type="collection">
           <parameter key="service">Vich\UploaderBundle\Naming\SmartUniqueNamer.gallery_images</parameter>
           <parameter key="options" type="collection"/>
@@ -290,8 +292,6 @@
           <parameter key="service">null</parameter>
           <parameter key="options">null</parameter>
         </parameter>
-        <parameter key="delete_on_remove">true</parameter>
-        <parameter key="delete_on_update">true</parameter>
         <parameter key="inject_on_load">false</parameter>
         <parameter key="db_driver">orm</parameter>
       </parameter>
@@ -431,19 +431,18 @@
         <argument type="service" id=".service_locator.5PWTx9U.App\Controller\Admin\PhotoCrudController"/>
       </call>
     </service>
-    <service id="App\Controller\Admin\TestCrudController" class="App\Controller\Admin\TestCrudController" public="true" autowire="true" autoconfigure="true">
-      <tag name="ea.crud_controller"/>
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.5PWTx9U.App\Controller\Admin\TestCrudController"/>
-      </call>
-    </service>
     <service id="App\Controller\AppointmentController" class="App\Controller\AppointmentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\AppointmentController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GalleryController" class="App\Controller\GalleryController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GalleryController"/>
       </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
@@ -458,6 +457,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\SecurityController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ShowOffController" class="App\Controller\ShowOffController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\ShowOffController"/>
       </call>
     </service>
     <service id="App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" autoconfigure="true">
@@ -513,7 +519,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.vfV_bTb"/>
+      <argument type="service" id=".service_locator.9qtGLiV"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1627,6 +1633,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.app.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.app.taggable" class="Symfony\Component\Cache\Adapter\TagAwareAdapter">
       <tag name="cache.taggable" pool="cache.app"/>
@@ -1636,31 +1643,37 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.system.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.validator.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.serializer.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.property_info.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.asset_mapper" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.asset_mapper.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.messenger.restart_workers_signal" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.messenger.restart_workers_signal.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.adapter.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" abstract="true">
       <tag name="cache.pool" clearer="cache.system_clearer" reset="reset"/>
@@ -3654,7 +3667,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.vfV_bTb"/>
+      <argument type="service" id=".service_locator.9qtGLiV"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4676,6 +4689,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.validator_expression_language.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="validator.expression_language_provider" class="Symfony\Component\Validator\Constraints\ExpressionLanguageProvider"/>
     <service id="validator.email" class="Symfony\Component\Validator\Constraints\EmailValidator">
@@ -5851,10 +5865,12 @@
     <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.result.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="cache.doctrine.orm.default.query" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.query.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver">
       <argument type="service" id="service_container"/>
@@ -6903,6 +6919,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.security_expression_language.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="controller.is_granted_attribute_listener" class="Symfony\Component\Security\Http\EventListener\IsGrantedAttributeListener">
       <tag name="kernel.event_subscriber"/>
@@ -6917,6 +6934,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.security_is_granted_attribute_expression_language.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="security.is_csrf_token_valid_attribute_expression_language" class="Symfony\Component\ExpressionLanguage\ExpressionLanguage">
       <argument type="service" id="cache.security_is_csrf_token_valid_attribute_expression_language" on-invalid="null"/>
@@ -6925,6 +6943,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.security_is_csrf_token_valid_attribute_expression_language.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="security.password_hasher_factory" class="Symfony\Component\PasswordHasher\Hasher\PasswordHasherFactory">
       <argument type="collection">
@@ -7877,6 +7896,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.ux.twig_component.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="ux.twig_component.cache_warmer" class="Symfony\UX\TwigComponent\CacheWarmer\TwigComponentCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -8005,6 +8025,7 @@
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.easyadmin.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteGenerator" class="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteGenerator">
       <argument type="tagged_iterator" tag="ea.dashboard_controller"/>
@@ -8513,19 +8534,21 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\PhotoCrudController" class="App\Controller\Admin\PhotoCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\PhotoCrudController" class="App\Controller\Admin\PhotoCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\PhotoCrudController" class="App\Controller\Admin\PhotoCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\TestCrudController" class="App\Controller\Admin\TestCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\TestCrudController" class="App\Controller\Admin\TestCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\TestCrudController" class="App\Controller\Admin\TestCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Admin\TestCrudController" class="App\Controller\Admin\TestCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AppointmentController" class="App\Controller\AppointmentController" public="true" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AppointmentController" class="App\Controller\AppointmentController" public="true" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AppointmentController" class="App\Controller\AppointmentController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GalleryController" class="App\Controller\GalleryController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GalleryController" class="App\Controller\GalleryController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GalleryController" class="App\Controller\GalleryController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ShowOffController" class="App\Controller\ShowOffController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ShowOffController" class="App\Controller\ShowOffController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ShowOffController" class="App\Controller\ShowOffController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GalleryImageRepository" class="App\Repository\GalleryImageRepository" autowire="true" abstract="true"/>
@@ -9340,132 +9363,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ib1WIGE" method="withContext"/>
     </service>
-    <service id=".service_locator.OoSfY9L.App\Controller\Admin\TestCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::configureCrud()"/>
-      <argument>App\Controller\Admin\TestCrudController::configureCrud()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.OoSfY9L" method="withContext"/>
-    </service>
-    <service id=".service_locator.PE.ZUUL.App\Controller\Admin\TestCrudController::configureAssets()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::configureAssets()"/>
-      <argument>App\Controller\Admin\TestCrudController::configureAssets()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.PE.ZUUL" method="withContext"/>
-    </service>
-    <service id=".service_locator.T.Ra9lS.App\Controller\Admin\TestCrudController::configureActions()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::configureActions()"/>
-      <argument>App\Controller\Admin\TestCrudController::configureActions()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.T.Ra9lS" method="withContext"/>
-    </service>
-    <service id=".service_locator.CFbfVRp.App\Controller\Admin\TestCrudController::configureFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::configureFilters()"/>
-      <argument>App\Controller\Admin\TestCrudController::configureFilters()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CFbfVRp" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::index()"/>
-      <argument>App\Controller\Admin\TestCrudController::index()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::detail()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::detail()"/>
-      <argument>App\Controller\Admin\TestCrudController::detail()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::edit()"/>
-      <argument>App\Controller\Admin\TestCrudController::edit()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::new()"/>
-      <argument>App\Controller\Admin\TestCrudController::new()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::delete()"/>
-      <argument>App\Controller\Admin\TestCrudController::delete()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.oDo8ofG.App\Controller\Admin\TestCrudController::batchDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::batchDelete()"/>
-      <argument>App\Controller\Admin\TestCrudController::batchDelete()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.oDo8ofG" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::autocomplete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::autocomplete()"/>
-      <argument>App\Controller\Admin\TestCrudController::autocomplete()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.kqcX6wc.App\Controller\Admin\TestCrudController::createIndexQueryBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::createIndexQueryBuilder()"/>
-      <argument>App\Controller\Admin\TestCrudController::createIndexQueryBuilder()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.kqcX6wc" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::renderFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::renderFilters()"/>
-      <argument>App\Controller\Admin\TestCrudController::renderFilters()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::updateEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::updateEntity()"/>
-      <argument>App\Controller\Admin\TestCrudController::updateEntity()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::persistEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::persistEntity()"/>
-      <argument>App\Controller\Admin\TestCrudController::persistEntity()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::deleteEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::deleteEntity()"/>
-      <argument>App\Controller\Admin\TestCrudController::deleteEntity()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createEditForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::createEditForm()"/>
-      <argument>App\Controller\Admin\TestCrudController::createEditForm()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createEditFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::createEditFormBuilder()"/>
-      <argument>App\Controller\Admin\TestCrudController::createEditFormBuilder()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createNewForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::createNewForm()"/>
-      <argument>App\Controller\Admin\TestCrudController::createNewForm()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createNewFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::createNewFormBuilder()"/>
-      <argument>App\Controller\Admin\TestCrudController::createNewFormBuilder()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.ib1WIGE.App\Controller\Admin\TestCrudController::configureResponseParameters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController::configureResponseParameters()"/>
-      <argument>App\Controller\Admin\TestCrudController::configureResponseParameters()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ib1WIGE" method="withContext"/>
-    </service>
     <service id=".service_locator.7q9j4Qi" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9477,6 +9374,18 @@
       <argument>App\Controller\AppointmentController::form()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.7q9j4Qi" method="withContext"/>
+    </service>
+    <service id=".service_locator.9G0Mbtk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="photoRepository" type="service_closure" id="App\Repository\PhotoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.9G0Mbtk.App\Controller\GalleryController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GalleryController::index()"/>
+      <argument>App\Controller\GalleryController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.9G0Mbtk" method="withContext"/>
     </service>
     <service id=".service_locator.3QECKYg" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9490,7 +9399,13 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.3QECKYg" method="withContext"/>
     </service>
-    <service id=".service_locator.vfV_bTb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9G0Mbtk.App\Controller\ShowOffController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ShowOffController::index()"/>
+      <argument>App\Controller\ShowOffController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.9G0Mbtk" method="withContext"/>
+    </service>
+    <service id=".service_locator.9qtGLiV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -9519,29 +9434,10 @@
         <argument key="App\Controller\Admin\PhotoCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\PhotoCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\PhotoCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\PhotoCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\PhotoCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\PhotoCrudController::configureResponseParameters()"/>
-        <argument key="App\Controller\Admin\TestCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\TestCrudController::configureCrud()"/>
-        <argument key="App\Controller\Admin\TestCrudController::configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\TestCrudController::configureAssets()"/>
-        <argument key="App\Controller\Admin\TestCrudController::configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\TestCrudController::configureActions()"/>
-        <argument key="App\Controller\Admin\TestCrudController::configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\TestCrudController::configureFilters()"/>
-        <argument key="App\Controller\Admin\TestCrudController::index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::index()"/>
-        <argument key="App\Controller\Admin\TestCrudController::detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::detail()"/>
-        <argument key="App\Controller\Admin\TestCrudController::edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::edit()"/>
-        <argument key="App\Controller\Admin\TestCrudController::new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::new()"/>
-        <argument key="App\Controller\Admin\TestCrudController::delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::delete()"/>
-        <argument key="App\Controller\Admin\TestCrudController::batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\TestCrudController::batchDelete()"/>
-        <argument key="App\Controller\Admin\TestCrudController::autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::autocomplete()"/>
-        <argument key="App\Controller\Admin\TestCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\TestCrudController::createIndexQueryBuilder()"/>
-        <argument key="App\Controller\Admin\TestCrudController::renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::renderFilters()"/>
-        <argument key="App\Controller\Admin\TestCrudController::updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::updateEntity()"/>
-        <argument key="App\Controller\Admin\TestCrudController::persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::persistEntity()"/>
-        <argument key="App\Controller\Admin\TestCrudController::deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::deleteEntity()"/>
-        <argument key="App\Controller\Admin\TestCrudController::createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createEditForm()"/>
-        <argument key="App\Controller\Admin\TestCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createEditFormBuilder()"/>
-        <argument key="App\Controller\Admin\TestCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createNewForm()"/>
-        <argument key="App\Controller\Admin\TestCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createNewFormBuilder()"/>
-        <argument key="App\Controller\Admin\TestCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\TestCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\AppointmentController::form" type="service_closure" id=".service_locator.7q9j4Qi.App\Controller\AppointmentController::form()"/>
+        <argument key="App\Controller\GalleryController::index" type="service_closure" id=".service_locator.9G0Mbtk.App\Controller\GalleryController::index()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\ShowOffController::index" type="service_closure" id=".service_locator.9G0Mbtk.App\Controller\ShowOffController::index()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\Admin\DashboardController:configureUserMenu" type="service_closure" id=".service_locator.5FanY8e.App\Controller\Admin\DashboardController::configureUserMenu()"/>
@@ -9566,29 +9462,10 @@
         <argument key="App\Controller\Admin\PhotoCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\PhotoCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\PhotoCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\PhotoCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\PhotoCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\PhotoCrudController::configureResponseParameters()"/>
-        <argument key="App\Controller\Admin\TestCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\TestCrudController::configureCrud()"/>
-        <argument key="App\Controller\Admin\TestCrudController:configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\TestCrudController::configureAssets()"/>
-        <argument key="App\Controller\Admin\TestCrudController:configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\TestCrudController::configureActions()"/>
-        <argument key="App\Controller\Admin\TestCrudController:configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\TestCrudController::configureFilters()"/>
-        <argument key="App\Controller\Admin\TestCrudController:index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::index()"/>
-        <argument key="App\Controller\Admin\TestCrudController:detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::detail()"/>
-        <argument key="App\Controller\Admin\TestCrudController:edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::edit()"/>
-        <argument key="App\Controller\Admin\TestCrudController:new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::new()"/>
-        <argument key="App\Controller\Admin\TestCrudController:delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::delete()"/>
-        <argument key="App\Controller\Admin\TestCrudController:batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\TestCrudController::batchDelete()"/>
-        <argument key="App\Controller\Admin\TestCrudController:autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::autocomplete()"/>
-        <argument key="App\Controller\Admin\TestCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\TestCrudController::createIndexQueryBuilder()"/>
-        <argument key="App\Controller\Admin\TestCrudController:renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\TestCrudController::renderFilters()"/>
-        <argument key="App\Controller\Admin\TestCrudController:updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::updateEntity()"/>
-        <argument key="App\Controller\Admin\TestCrudController:persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::persistEntity()"/>
-        <argument key="App\Controller\Admin\TestCrudController:deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\TestCrudController::deleteEntity()"/>
-        <argument key="App\Controller\Admin\TestCrudController:createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createEditForm()"/>
-        <argument key="App\Controller\Admin\TestCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createEditFormBuilder()"/>
-        <argument key="App\Controller\Admin\TestCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createNewForm()"/>
-        <argument key="App\Controller\Admin\TestCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\TestCrudController::createNewFormBuilder()"/>
-        <argument key="App\Controller\Admin\TestCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\TestCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\AppointmentController:form" type="service_closure" id=".service_locator.7q9j4Qi.App\Controller\AppointmentController::form()"/>
+        <argument key="App\Controller\GalleryController:index" type="service_closure" id=".service_locator.9G0Mbtk.App\Controller\GalleryController::index()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\ShowOffController:index" type="service_closure" id=".service_locator.9G0Mbtk.App\Controller\ShowOffController::index()"/>
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9822,6 +9699,7 @@
       <tag name="messenger.bus"/>
       <tag name="container.decorator" id="messenger.bus.default" inner="debug.traced.messenger.bus.default.inner"/>
       <argument type="service" id="debug.traced.messenger.bus.default.inner"/>
+      <argument>null</argument>
     </service>
     <service id=".service_locator.IlGSE9J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -10174,18 +10052,15 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry">
       <argument type="collection">
         <argument key="App\Controller\Admin\PhotoCrudController">App\Entity\Photo</argument>
-        <argument key="App\Controller\Admin\TestCrudController">App\Entity\Photo</argument>
       </argument>
       <argument type="collection">
         <argument key="App\Controller\Admin\PhotoCrudController">682a327</argument>
-        <argument key="App\Controller\Admin\TestCrudController">2fa3596</argument>
       </argument>
       <argument type="collection">
-        <argument key="App\Entity\Photo">App\Controller\Admin\TestCrudController</argument>
+        <argument key="App\Entity\Photo">App\Controller\Admin\PhotoCrudController</argument>
       </argument>
       <argument type="collection">
         <argument key="682a327">App\Controller\Admin\PhotoCrudController</argument>
-        <argument key="2fa3596">App\Controller\Admin\TestCrudController</argument>
       </argument>
     </service>
     <service id=".service_locator.ILdUWIS" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -10262,12 +10137,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5PWTx9U" method="withContext"/>
     </service>
-    <service id=".service_locator.5PWTx9U.App\Controller\Admin\TestCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\TestCrudController"/>
-      <argument>App\Controller\Admin\TestCrudController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.5PWTx9U" method="withContext"/>
-    </service>
     <service id=".service_locator.ZyP9f7K" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -10290,6 +10159,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\GalleryController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GalleryController"/>
+      <argument>App\Controller\GalleryController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -10299,6 +10174,12 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\ShowOffController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ShowOffController"/>
+      <argument>App\Controller\ShowOffController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -10504,10 +10385,11 @@
           <argument>App\Kernel</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
           <argument>App\Controller\Admin\PhotoCrudController</argument>
-          <argument>App\Controller\Admin\TestCrudController</argument>
           <argument>App\Controller\AppointmentController</argument>
+          <argument>App\Controller\GalleryController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\SecurityController</argument>
+          <argument>App\Controller\ShowOffController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -12054,7 +11936,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.vfV_bTb"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.9qtGLiV"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -12112,6 +11994,7 @@
     <service id=".service_locator.Onun9z5" alias=".service_locator.CaejQBj"/>
     <service id=".service_locator.TLLELrk" alias=".service_locator.ib1WIGE"/>
     <service id=".service_locator.dHTFLip" alias=".service_locator.7q9j4Qi"/>
+    <service id=".service_locator.VWEBlrH" alias=".service_locator.9G0Mbtk"/>
     <service id=".service_locator.Nrz07Zz" alias=".service_locator.3QECKYg"/>
     <service id=".service_locator.JajWvNv" alias=".service_locator.zHhPQcF"/>
     <service id=".service_locator.kwdTDcG" alias=".service_locator.5PWTx9U"/>

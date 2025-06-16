@@ -31,7 +31,13 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
     public function unconfigure(Recipe $recipe, $config, Lock $lock)
     {
         $this->write('Removing files from recipe');
-        $this->removeFiles($config, $this->getRemovableFilesFromRecipeAndLock($recipe, $lock), $this->options->get('root-dir'));
+        $rootDir = $this->options->get('root-dir');
+
+        foreach ($this->options->getRemovableFiles($recipe, $lock) as $file) {
+            if ('.git' !== $file) { // never remove the main Git directory, even if it was created by a recipe
+                $this->removeFile($this->path->concatenate([$rootDir, $file]));
+            }
+        }
     }
 
     public function update(RecipeUpdate $recipeUpdate, array $originalConfig, array $newConfig): void
@@ -58,38 +64,12 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
     private function resolveTargetFolder(string $path, array $config): string
     {
         foreach ($config as $key => $target) {
-            if (0 === strpos($path, $key)) {
+            if (str_starts_with($path, $key)) {
                 return $this->options->expandTargetDir($target).substr($path, \strlen($key));
             }
         }
 
         return $path;
-    }
-
-    private function getRemovableFilesFromRecipeAndLock(Recipe $recipe, Lock $lock): array
-    {
-        $lockedFiles = array_unique(
-            array_reduce(
-                array_column($lock->all(), 'files'),
-                function (array $carry, array $package) {
-                    return array_merge($carry, $package);
-                },
-                []
-            )
-        );
-
-        $removableFiles = $recipe->getFiles();
-
-        $lockedFiles = array_map('realpath', $lockedFiles);
-
-        // Compare file paths by their real path to abstract OS differences
-        foreach (array_keys($removableFiles) as $file) {
-            if (\in_array(realpath($file), $lockedFiles)) {
-                unset($removableFiles[$file]);
-            }
-        }
-
-        return $removableFiles;
     }
 
     private function copyFiles(array $manifest, array $files, array $options): array
@@ -116,7 +96,7 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
     {
         $copiedFiles = [];
         foreach ($files as $file => $data) {
-            if (0 === strpos($file, $source)) {
+            if (str_starts_with($file, $source)) {
                 $file = $this->path->concatenate([$target, substr($file, \strlen($source))]);
                 $copiedFiles[] = $this->copyFile($file, $data['contents'], $data['executable'], $options);
             }
@@ -146,28 +126,6 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
         $this->write(\sprintf('  Created <fg=green>"%s"</>', $this->path->relativize($to)));
 
         return $copiedFile;
-    }
-
-    private function removeFiles(array $manifest, array $files, string $to)
-    {
-        foreach ($manifest as $source => $target) {
-            $target = $this->options->expandTargetDir($target);
-
-            if ('.git' === $target) {
-                // never remove the main Git directory, even if it was created by a recipe
-                continue;
-            }
-
-            if ('/' === substr($source, -1)) {
-                foreach (array_keys($files) as $file) {
-                    if (0 === strpos($file, $source)) {
-                        $this->removeFile($this->path->concatenate([$to, $target, substr($file, \strlen($source))]));
-                    }
-                }
-            } else {
-                $this->removeFile($this->path->concatenate([$to, $target]));
-            }
-        }
     }
 
     private function removeFile(string $to)
